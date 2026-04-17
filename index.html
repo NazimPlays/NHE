@@ -1,37 +1,98 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nazim FF Panel</title>
-    <style>
-        body {
-            background: black;
-            color: white;
-            text-align: center;
-            font-family: Arial;
-        }
-        h1 {
-            color: red;
-        }
-        .box {
-            margin-top: 50px;
-        }
-        button {
-            padding: 12px 25px;
-            background: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
+/* গুগল ফন্ট ব্যবহার করা হয়েছে */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap');
 
-    <h1>🔥 NAZIM FF PANEL 🔥</h1>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
 
-    <div class="box">
-        <p>Welcome to my Free Fire Tool Panel</p>
-        <button onclick="alert('Panel Activated 😎')">Start Tool</button>
-    </div>
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-</body>
-</html>
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 5px rgba(118, 75, 162, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #5a3a7a;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #764ba2;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
