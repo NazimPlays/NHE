@@ -1,98 +1,271 @@
-/* গুগল ফন্ট ব্যবহার করা হয়েছে */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXT HIDDEN ELITE - ULTRA SYSTEM</title>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Hind Siliguri', sans-serif;
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --neon:#00f7ff;
+  --bg:#050505;
 }
 
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle,#0b0b0b,#000);
+  overflow:hidden;
+  color:#fff;
 }
 
-.login-container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
+body::before{
+  content:"";
+  position:absolute;
+  width:200%;height:200%;
+  background-image: radial-gradient(#00f7ff22 1px,transparent 1px);
+  background-size:40px 40px;
+  animation: move 20s linear infinite;
+  opacity:0.2;
 }
 
-.login-form h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 10px;
+@keyframes move{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(-200px,-200px)}
 }
 
-.login-form p {
-    text-align: center;
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 30px;
+.container{
+  width:420px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(20,20,20,0.85);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 0 40px rgba(0,247,255,0.15);
+  position:relative;
 }
 
-.input-group {
-    margin-bottom: 20px;
+.title{
+  text-align:center;
+  font-family:'Orbitron';
+  color:var(--neon);
+  font-size:20px;
+  margin-bottom:15px;
+  letter-spacing:2px;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #444;
-    font-weight: 600;
+.inputBox{margin-bottom:10px;}
+
+input{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #333;
+  background:#000;
+  color:#fff;
+  outline:none;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
-    transition: 0.3s;
+.btns{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
 }
 
-.input-group input:focus {
-    border-color: #764ba2;
-    box-shadow: 0 0 5px rgba(118, 75, 162, 0.3);
+button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-.login-btn {
-    width: 100%;
-    padding: 12px;
-    background: #764ba2;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+.login{background:var(--neon);color:#000;}
+.register{background:transparent;border:1px solid var(--neon);color:var(--neon);}
+
+.glass-box{
+  margin-top:15px;
+  height:90px;
+  overflow:auto;
+  padding:10px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(0,247,255,0.2);
+  font-size:11px;
+  font-family:monospace;
+  position:relative;
 }
 
-.login-btn:hover {
-    background: #5a3a7a;
+.glass-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent,rgba(0,247,255,0.1),transparent);
+  animation:scan 2s linear infinite;
 }
 
-.footer-links {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
+@keyframes scan{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
 }
 
-.footer-links a {
-    color: #764ba2;
-    text-decoration: none;
+.profile{margin-top:10px;font-size:11px;max-height:80px;overflow:auto;}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+.modal-content{
+  width:300px;
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid var(--neon);
 }
+
+.small{font-size:11px;color:#aaa;cursor:pointer;display:block;margin-top:8px;}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainUI">
+  <div class="title">NEXT HIDDEN ELITE</div>
+
+  <div class="inputBox"><input id="u" placeholder="Username"></div>
+  <div class="inputBox"><input id="p" type="password" placeholder="Password"></div>
+  <div class="inputBox"><input id="e" placeholder="Email"></div>
+  <div class="inputBox"><input id="cp" type="password" placeholder="Confirm Password"></div>
+
+  <div class="btns">
+    <button class="register" onclick="register()">REGISTER</button>
+    <button class="login" onclick="login()">LOGIN</button>
+  </div>
+
+  <span class="small" onclick="openForgot()">Forgot Password?</span>
+
+  <div class="glass-box" id="log">SYSTEM BOOTING...</div>
+  <div class="profile" id="profiles"></div>
+</div>
+
+<div class="modal" id="forgotModal">
+  <div class="modal-content">
+    <h3 style="color:var(--neon)">RESET PASSWORD</h3>
+    <input id="femail" placeholder="Enter Email">
+    <button onclick="resetPass()" style="margin-top:10px;width:100%">RESET</button>
+    <button onclick="closeForgot()" style="margin-top:10px;width:100%">CLOSE</button>
+  </div>
+</div>
+
+<script>
+// ===== IP SYSTEM =====
+let allowedIP = "19.212.133.11";
+let userIP = null;
+
+fetch("https://api.ipify.org?format=json")
+.then(res => res.json())
+.then(data => {
+  userIP = data.ip;
+  log("YOUR IP: " + userIP);
+
+  if(userIP !== allowedIP){
+    log("ACCESS BLOCKED ❌");
+    document.getElementById("mainUI").innerHTML =
+      "<h2 style='color:red;text-align:center'>ACCESS DENIED</h2>";
+  } else {
+    log("IP VERIFIED ✔");
+  }
+});
+
+// ===== USER SYSTEM =====
+let users = JSON.parse(localStorage.getItem("users")) || [];
+let device = localStorage.getItem("deviceId");
+
+if(!device){
+  device = Math.random().toString(36).substring(2);
+  localStorage.setItem("deviceId", device);
+}
+
+function log(t){
+  let box=document.getElementById("log");
+  box.innerHTML+="<br>> "+t;
+  box.scrollTop=9999;
+}
+
+function save(){localStorage.setItem("users",JSON.stringify(users));}
+
+function canRegister(){
+  return !localStorage.getItem("registered");
+}
+
+function register(){
+  if(userIP !== allowedIP) return log("IP NOT ALLOWED");
+
+  let u=uVal(),p=pVal(),e=eVal(),cp=cpVal();
+
+  if(!u||!p||!e) return log("FILL ALL FIELDS");
+  if(p!==cp) return log("PASSWORD NOT MATCH");
+
+  if(!canRegister()) return log("ONE DEVICE LIMIT");
+
+  users.push({u,p,e});
+  save();
+  localStorage.setItem("registered","true");
+  log("REGISTER SUCCESS: "+u);
+  show();
+}
+
+function login(){
+  if(userIP !== allowedIP) return log("IP NOT ALLOWED");
+
+  let u=uVal(),p=pVal();
+  let found = users.find(x=>x.u===u && x.p===p);
+
+  if(found){
+    log("ACCESS GRANTED ✔");
+  }else{
+    log("ACCESS DENIED ❌");
+  }
+  show();
+}
+
+function show(){
+  let box=document.getElementById("profiles");
+  box.innerHTML="";
+  users.forEach((x,i)=>{
+    box.innerHTML+=`<div>#${i+1} ${x.u} (${x.e})</div>`;
+  });
+}
+
+function openForgot(){document.getElementById("forgotModal").style.display="flex";}
+function closeForgot(){document.getElementById("forgotModal").style.display="none";}
+
+function resetPass(){
+  let em=document.getElementById("femail").value;
+  let user=users.find(x=>x.e===em);
+  if(user){log("RESET LINK SENT (SIMULATED)");}
+  else{log("EMAIL NOT FOUND");}
+}
+
+function uVal(){return document.getElementById("u").value;}
+function pVal(){return document.getElementById("p").value;}
+function eVal(){return document.getElementById("e").value;}
+function cpVal(){return document.getElementById("cp").value;}
+
+show();
+</script>
+
+</body>
+</html>
